@@ -1,0 +1,12 @@
+Well done, Shuyang. Overall, you have done a very good job. The program does what the specification says, your Test Strategy is done well and the class diagram is fine. During the assignment interview, you responded pretty well and has demonstrated very good understanding of your own code. 
+
+There are just some minor issues. For example, I found some coding standard violations, for example:
+Long lines, e.g. AFLGame line 78
+Methods not sorted, e.g. AFLGame displayGameResult should be after displayDoubleInformation
+Missing a space around an operator, e.g. AFLGame line 102
+Not in camel case, e.g. AFLGame 352 "agame" should be "aGame"
+Also, I found it a bit odd to have a "getReported()" method in the Player class that sets the value of a field - shouldn't that be called "setReported" instead?
+
+You did pretty well with the inheritance in your code. However, I personally wouldn't do what you did in the kickABall() method in the Reserve class. Your code creates a new Player object every time when the kickABall() method is called (line 61-66 in Reserve). Instead of that, I think a better design is to use a Player field in the Reserve class, so that you do not need to create a new Player object every time (only need to do that once during "substitute"). Then, the kickABall() method can be as simple as "if player is not null, return player.kickABall()" - two lines only.
+
+graded by Tim Ho
